@@ -1,0 +1,146 @@
+{% extend 'base.html' %}
+
+{% load 'static' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+{% endblock %}
+
+{% block content %}
+
+   
+<section class="home" id="home">
+
+    <div class="swiper home-slider">
+
+        <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+                <div class="box" style="background: url(images/blog1.jpg) no-repeat;">
+                    <div class="content">
+                       
+                        <h3>Ճանաչիր Հայաստանը</h3>
+                     
+                        <a href="#" class="btn">get started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box second" style="background: url(images/pop1.jpg) no-repeat;">
+                    <div class="content">
+                      
+                        <h3>Ճանապարհորդիր աշխարհով մեկ</h3>
+                       
+                        <a href="#" class="btn">get started</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="swiper-slide">
+                <div class="box" style="background: url(images/blog4.jpg) no-repeat;">
+                    <div class="content">
+                        <span>Բացահայտիր </span>
+                        <h3>Հետաքրքիր վայրերը</h3>
+                       
+                        <a href="#" class="btn">get started</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+
+    </div>
+    <!--blog section -->
+    
+    
+<section class="services" id="services">
+
+
+
+    <div class="boxx-container">
+
+        <div class="boxx">
+            <img src="images/h1.jpg" alt="" width="90%">
+            <h3>Հայաստանի 5 վայրեր, որոնց մասին զբոսաշրջիկները չգիտեն</h3>
+            <p>Հայաստանը գտնվում է Ասիական և Եվրոպական բարձրավանդակների միջև՝ հենց Մերձավոր
+             Արևելքի գագաթին։ Տարածքը լի է բնական աղբյուրի ջրով, փարթամ լեռնային լանդշաֆտներով և հնագույն սրբավայրերով։</p>
+            <a href="#" class="btn">Կարդալ ավելին</a>
+        </div>
+
+        <div class="boxx">
+            <img src="images/h2.jpg" alt="" width="100%" height="30%">
+            <h3>Աշխարհի ամենաերկար ճոպանուղին</h3>
+            <p>«ՏաԹևեր»-ն աշխարհի ամենաերկար ճոպանուղին է՝ 5,7 կմ երկարությամբ երկփուլ 
+                ճոպանուղի, որը գտնվում է Հայաստանում։  Չնայած Հայաստանը լի է հնագույն եկեղեցիներով և ամրոցներով, այն նաև հանդիսանում է այս հայտնի և
+            շինարարական հրաշքի տունը</p>
+            <pre>
+
+        <a href="#" class="btn">կարդալ ավելին</a></pre>
+        </div>
+
+        <div class="boxx">
+            <img src="images/h3.jpg" alt="" width="100%">
+            <h3>Զիփ լայնի մասին</h3>
+            <p>Զիփլայնը թույլ է տալիս էքստրիմի սիրահարներին մի կետից մյուսը տեղափոխվել ճոպանի և սեփական ծանրության հաշվին` տարբեր արագությամբ թռչելով կիրճի վրայով:</p>
+            <pre>
+
+
+
+
+
+
+
+
+
+
+
+
+          
+            <a href="#" class="btn">Կարդալ ավելին</a>
+        </pre>
+        </div>
+
+        <div class="boxx">
+            <img src="images/north.jpg" alt="" width="90%">
+            <h3>Երկրի բնական գեղեցկություններից մեկը</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio ipsa ab cum error quas fuga ad? Perspiciatis, autem officiis?
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio ipsa ab cum error quas fuga 
+            </p>
+            <a href="#" class="btn">կարդալ ավելին</a>
+        </div>
+
+        <div class="boxx">
+            <img src="images/italy.jpg" alt="" width="90%">
+            <h3>Իտալիայի մշակույթը</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio ipsa ab cum error quas fuga ad? Perspiciatis, autem officiis?</p>
+            <a href="#" class="btn">կարդալ ավելին</a>
+        </div>
+
+        <div class="boxx">
+            <img src="images/word.jpg" alt="" width="90%">
+            <h3>Աշխարհի թոփ 10 տեսարժան վայրերը</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam distinctio ipsa ab cum error quas fuga ad? Perspiciatis, autem officiis?</p>
+            <a href="#" class="btn">learn more</a>
+        </div>
+
+    </div>
+
+</section>
+
+
+</section>
+
+{% endblock %}
+
+{% block js %}
+
+    <script src="{ url static/blog.js }"></script>
+
+{% endblock %}
+
+
+

@@ -1,0 +1,77 @@
+{% extend 'base.html' %}
+
+{% load 'static' %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+{%endblock%}
+
+{%block content%}
+
+   
+    <!-- home section stars  -->
+
+    <section class="home" id="home">
+        <div class="content">
+            <h1>Մենք ճանապարհորդելը հասանելի ենք դարձնում բոլորի համար</h1>
+            <p> Մենք հավատում ենք, որ յուաքանչյուր ոք ունի ազատ ընտրության իրավունք ճանաչելու աշխարհը։
+                
+               Այդ իսկ պատճառով, մենք ավելի հարմար ենք դարձնում ճանապարհորդելը</p>
+
+           
+        </div>
+
+
+        <div class="image">
+            <img src="images/a1.jpg" alt="illustration-hero">
+        </div>
+    </section>
+
+    <!-- home section ends -->
+
+    <!-- features sectin starts  -->
+
+    <section class="features" id="features">
+      
+
+        <div class="row">
+            <!-- 1 Tab  -->
+            <div class="image">
+                <img src="images/a2.jpg" alt="illustration-features-tab-1">
+            </div>
+
+
+            <div class="content">
+                <h1>Մենք ամրագրում ենք, դուք ճամփորդում</h1>
+                <p>  Այս կայքի միջոցով ամրագրելը ավելի արագ է և մատչելի։
+                    Ընտրեք վայրը,որտեղ ցանկանում եք գնալ ,ամրագրեք հյուրանոցը և թռիչքը, իսկ մենք կապահովենք կատարյալ
+                    հանգիստը
+                </p>
+  
+            </div>
+
+            <!-- 1 Tab  -->
+
+            <!-- 2 Tab  -->
+            <div class="content">
+                <h1>Մեզ համար կարևոր են ձեր նախասիրությունները</h1>
+                <p>Մենք ստեղծել ենք մի հարթակ, որը կօգնի ձեզ խնայել ժամանակ և գումար
+                    ճամփորդություն պլանավորելիս
+                </p>
+           
+            </div>
+
+            <div class="image">
+                <img src="images/a3.jpg" alt="illustration-features-tab-2">
+            </div>
+
+            
+
+        </div>
+    </section>
+
+
+{% endblock %}
+{% block js%}
+    <script src="{% static 'js/script.js' %}"></script>
+{%endblock%}    

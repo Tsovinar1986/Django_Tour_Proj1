@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/flights.css' %}">
+{%endblock%}
+
+{%block content%}
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+    <form action="">
+
+        <h3>Find A Flexible Flight For Your Next Trip</h3>
+
+        <div class="buttons-container">
+            <a href="#" class="btn">flying from</a>
+            <a href="#" class="btn">FLYNING TO</a>
+        </div>
+
+        <div class="inputBox">
+            <input type="search" name="" placeholder="city or airport" id="">
+            <input type="search" name="" placeholder="city or airport" id="">
+           
+            <select name="" id="">
+                <option value="" disabled hidden selected>return</option>
+                <option value="Ready To Move">one way</option>
+                <option value="under construction">Multi-city</option>
+               
+            </select>
+            <select name="" id="">
+                <option value="" disabled hidden selected>economy</option>
+                <option value="flat">premium economy</option>
+                <option value="business">business</option>
+                <option value="first">first</option>
+                <option value="multiple">multiple</option>
+          
+            </select>
+            <div class="inputbox">
+           
+                <input type="date" value="">
+            </div>
+            <div class="inputbox">
+             
+                <input type="number" placeholder="number of travelers" value="">
+   </div>
+            
+            <select name="" id="">
+                <option value="" disabled hidden selected>payment</option>
+                <option value="paypal">paypal</option>
+                <option value="mastercard">mastercard</option>
+                <option value="visa">visa</option>
+                <option value="arca">arca</option>
+         
+            </select>
+        </div>
+
+        <input type="submit" value="search " class="btn">
+
+    </form>
+
+</section>
+
+<!-- home section ends -->
+
+{% endblock %}
+
+{% block js %}
+<script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+
+<!-- javascript part  -->
+<script>
+
+let menu = document.querySelector('#menu-bars');
+let navbar = document.querySelector('.navbar');
+
+menu.onclick = () =>{
+    navbar.classList.toggle('active');
+    menu.classList.toggle('fa-times');
+}
+
+window.onscroll = () =>{
+    navbar.classList.remove('active');
+    menu.classList.remove('fa-times');
+}
+
+</script>
+
+{% endblock %}
