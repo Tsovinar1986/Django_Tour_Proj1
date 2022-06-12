@@ -31,14 +31,14 @@ conda create -n djangoenv python=x.x anaconda or other name which you choose for
 You have to install django on anaconda: 
 conda install -c anaconda django or conda install django
 
-after is to cinstall pillow: 
+after is to install pillow: 
 windows: 
-venc: pip install pillow
+venv: pip install pillow
 conda: conda install -c anaconda pillow or conda install pillow
 Linux: 
-venc: pip install pillow
+venv: pip install pillow
 conda: conda install -c anaconda pillow or conda install pillow
 Macos: 
-venc: pip install pillow
+venv: pip install pillow
 conda: conda install -c anaconda pillow or conda install pillow
 
