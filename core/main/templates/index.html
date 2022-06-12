@@ -83,7 +83,8 @@
 
     <h1 class="heading">Արկածային տուրիզմի գաղափարներ</h1>
         <div class="box-container">
-            {% for i in slide %}
+            {% for i in tours %}
+                {% if i.in_page %}
                 <div class="box">
                 <img src= "{{ i.img.url }}" alt="">
                 <h3>{{ i.name }} </h3>

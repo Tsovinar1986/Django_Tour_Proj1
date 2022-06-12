@@ -54,7 +54,11 @@ class HomeView(ListView):
     def get(self,request):
         products = HomeProduct.objects.filter()
         slides = HomeSlide.objects.all()
-        return render(request,self.template_name,{'products':products,'slides':slides})
+        context = {
+            'products' : products,
+            'slides' : slides,
+        }
+        return render(request,self.template_name,context)
     
 class HomeDetailView(DetailView):
     template_name = 'blog.html'
@@ -62,28 +66,15 @@ class HomeDetailView(DetailView):
     def get(self,request,id):
         product = HomeProduct.objects.get(pk=id)
         slide = HomeSlide.objects.get(pk=id)
-        return render(request,self.template_name,{'product':product,'slide':slide})
-    
-# class flightslistView(ListView):
-#     template_name = 'flights.html'
-    
-#     def get(self,request):
-#         flights_to = flights.objects.all()
-#         flights_from =flights.objects.all()
-#         return render(request,self.template_name,{'flights_from':flights_from,'flights_to':flights_to})
-    
-# class flightsDetailView(DetailView):
-#     template_name = 'flights.html'
-    
-#     def get(self,request,id):
-#         flights_from = flightslistView.object_list.get(pk=id)
-#         flights_to = flightslistView.object_list.get(pk=id)
-#         return render(request,self.template_name,{'flight_from':flights_from,'flights_to': flights_to})
+        context = {
+            'product' : product,
+            'slide' : slide,
+        }
+        return render(request,self.template_name,context)        
         
-        
-# def aboutus(request):
-#     aboutus = 'aboutus.html'
-#     return render(request,aboutus)
+def aboutus(request):
+    aboutus = 'aboutus.html'
+    return render(request,aboutus)
 
 # def add_post(request):
 #     	form = AddCart()

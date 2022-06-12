@@ -1,5 +1,5 @@
-from tabnanny import verbose
 from distutils.command.upload import upload
+from pydoc import describe
 from django.db import models
 from django.urls import reverse
 
@@ -13,21 +13,20 @@ class HomeSlide(models.Model):
     about = models.CharField('slide about',max_length=1000)
     img = models.ImageField('slide image', upload_to ='media')
     
+    
     def __str__(self):
-            return self.name
+            return self.slide
 
     class Meta:
         verbose_name = 'Slide'
         verbose_name_plural = 'Slides'
-        
-        
-        
+
 class HomeProduct(models.Model):
         name = models.CharField('Product name', max_length=500, blank = True)
         decsribe = models.TextField('Product describtion', blank = True)
         price = models.IntegerField('Product price', blank = True) 
         img = models.ImageField('Product image', upload_to ='media', blank = True)   
-    
+        
         def __str__(self):
            return self.name
     
@@ -37,6 +36,7 @@ class HomeProduct(models.Model):
         
 class stays(models.Model):
     name = models.CharField('Hotel name',max_length=50, blank = True)
+    describe = models.TextField('Hotel describtion', max_length=100, blank=True)
     img =models.ImageField('Hotel image', upload_to = 'media',blank = True)
     price = models.IntegerField('hotel one nigth price',blank = True)
     
