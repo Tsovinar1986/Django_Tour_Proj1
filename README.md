@@ -28,18 +28,22 @@ on windows,Linux and Macos we install django: pip install django
 if we use conda we have to create the django environement:
 conda create -n djangoenv python=x.x anaconda or other name which you choose for your django environment,  the version which is latest and that activate it: conda activate and the name of your conda django environment
 
+On conda you have to install environement to as conda install -n djangoenv anaconda or you environment name
+
 You have to install django on anaconda: 
-conda install -c anaconda django or conda install django
+conda install -c anaconda django 
 
 after is to install pillow: 
 windows: 
 venv: pip install pillow
-conda: conda install -c anaconda pillow or conda install pillow
+conda: conda install -c anaconda pillow 
 Linux: 
 venv: pip install pillow
-conda: conda install -c anaconda pillow or conda install pillow
+conda: conda install -c anaconda pillow 
 Macos: 
 venv: pip install pillow
-conda: conda install -c anaconda pillow or conda install pillow
+conda: conda install -c anaconda pillow 
+
+
 
 After installing the requirements for the environment we start our project.
