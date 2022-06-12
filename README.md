@@ -8,13 +8,16 @@ In the first place we make our repository in github for this porject after we cl
 The cloning will be git clone and the path of repository
 As it's a new project we have to use or conda or virtual environment
 Windows:
-1.py or python or python3 -m venv venv we create for our windows os Virtual environment
+1.py or python  -m venv venv we create for our windows os Virtual environment
 2.We have to activate it: venv\Scripts\activate
 
-on MacOs we activate: source venv/bin/activate
-on Linux: source .venv/bin/activate
+On MacOs we activate: source venv/bin/activate
+but before activateion you have to make your venv: pyhton3 -m venv venv as Macos autamatically has its python2 
 
-or we can use anaconda for conda environment
+On linux: python -m venv venv
+activate: source .venv/bin/activate
+
+We can use anaconda for conda environment
 
 For windows we have to upgrade our pip: 
 python3 or py or python -m pip install --upgrade pip
