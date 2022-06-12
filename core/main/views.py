@@ -1,5 +1,4 @@
 from asyncio.log import logger
-from multiprocessing import context
 from django.dispatch import receiver
 from django.shortcuts import render, redirect
 from .models import  HomeProduct, HomeSlide,aboutus,stays,flights,Cart,UserCarts
@@ -60,20 +59,27 @@ class  Homedetail(DetailView):
     template_name = 'blog.html'
     
     def get(self,request,id):
-        prod = HomeProduct.objects.get(pk=id)
         slide = HomeSlide.objects.get(pk=id)
-        return render(request,self.template_name,{'prod':prod,'slide':slide})
+        prod = HomeProduct.objects.get(pk=id)
+        return render(request,self.template_name,{'slide':slide,'prod':prod})
 
-
-def flights(request):
-    flights  = 'flights.html'
-    return render(request, 'flights.html', {'flights':flights})
-
-def stays(request):
-    stays = 'stays.html'
-    return render(request, 'stays.html', {'stays':stays})
-
+class flightslistView(ListView):
+    template_name = 'flights.html'
     
+    def get(self,request):
+        flights_to = flights.objects.all()
+        flights_from =flights.objects.all()
+        return render(request,self.template_name,{'flights_from':flights_from,'flights_to':flights_to})
+    
+class flightsDetailView(DetailView):
+    template_name = 'flights.html'
+    
+    def get(self,request,id):
+        flights_from = flightslistView.object_list.get(pk=id)
+        flights_to = flightslistView.object_list.get(pk=id)
+        return render(request,self.template_name,{'flight_from':flights_from,'flights_to': flights_to})
+        
+
 # def add_post(request):
 #     	form = AddCart()
 # 	    if request.method == 'POST':

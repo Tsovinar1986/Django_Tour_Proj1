@@ -21,7 +21,7 @@
                         <span>never stop</span>
                         <h3>exploring</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde ex molestias soluta consequatur saepe aliquam, excepturi delectus consequuntur minus!</p>
-                        <a href="#" class="btn">get started</a>
+                        <a href="{% url 'index' %}" class="btn">get started</a>
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                         <span>make tour</span>
                         <h3>amazing</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde ex molestias soluta consequatur saepe aliquam, excepturi delectus consequuntur minus!</p>
-                        <a href="#" class="btn">get started</a>
+                        <a href="{% url 'index' %}" class="btn">get started</a>
                     </div>
                 </div>
             </div>
@@ -43,7 +43,7 @@
                         <span>explore the</span>
                         <h3>new world</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit unde ex molestias soluta consequatur saepe aliquam, excepturi delectus consequuntur minus!</p>
-                        <a href="#" class="btn">get started</a>
+                        <a href="{% url 'index' %}" class="btn">get started</a>
                     </div>
                 </div>
             </div>
@@ -83,13 +83,13 @@
 
     <h1 class="heading">Արկածային տուրիզմի գաղափարներ</h1>
         <div class="box-container">
-            {% for i in prod %}
-                {% if i.in_page %}
+            {% for i in slider %}
+                {% if  i in slider %}
                 <div class="box">
                 <img src= "{{ i.img.url }}" alt="">
                 <h3>{{ i.name }} </h3>
                 <p>{{ i.describe }}</p>
-                <a href="#" class="btn">կարդալ ավելին</a>
+                <a href="{% url 'blog' %}" class="btn">կարդալ ավելին</a>
                 </div>  
         {% endif %}
 {% endfor %}
