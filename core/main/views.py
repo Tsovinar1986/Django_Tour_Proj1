@@ -1,7 +1,8 @@
 from asyncio.log import logger
+from itertools import product
 from django.dispatch import receiver
 from django.shortcuts import render, redirect
-from .models import  HomeProduct, HomeSlide,aboutus,stays,flights,Cart,UserCarts
+from .models import  HomeProduct, HomeSlide
 from django.contrib import messages
 from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.forms import AuthenticationForm
@@ -47,38 +48,42 @@ def logout_request(request):
 	messages.info(request, "You have successfully logged out.") 
 	return redirect("home")
 
-class HomeListView(ListView):
+class HomeView(ListView):
     template_name = 'index.html'
     
     def get(self,request):
-        prods = HomeProduct.objects.filter()
+        products = HomeProduct.objects.filter()
         slides = HomeSlide.objects.all()
-        return render(request,self.template_name,{'prods':prods, 'slides' :slides})
-   
-class  Homedetail(DetailView):
+        return render(request,self.template_name,{'products':products,'slides':slides})
+    
+class HomeDetailView(DetailView):
     template_name = 'blog.html'
     
     def get(self,request,id):
+        product = HomeProduct.objects.get(pk=id)
         slide = HomeSlide.objects.get(pk=id)
-        prod = HomeProduct.objects.get(pk=id)
-        return render(request,self.template_name,{'slide':slide,'prod':prod})
-
-class flightslistView(ListView):
-    template_name = 'flights.html'
+        return render(request,self.template_name,{'product':product,'slide':slide})
     
-    def get(self,request):
-        flights_to = flights.objects.all()
-        flights_from =flights.objects.all()
-        return render(request,self.template_name,{'flights_from':flights_from,'flights_to':flights_to})
+# class flightslistView(ListView):
+#     template_name = 'flights.html'
     
-class flightsDetailView(DetailView):
-    template_name = 'flights.html'
+#     def get(self,request):
+#         flights_to = flights.objects.all()
+#         flights_from =flights.objects.all()
+#         return render(request,self.template_name,{'flights_from':flights_from,'flights_to':flights_to})
     
-    def get(self,request,id):
-        flights_from = flightslistView.object_list.get(pk=id)
-        flights_to = flightslistView.object_list.get(pk=id)
-        return render(request,self.template_name,{'flight_from':flights_from,'flights_to': flights_to})
+# class flightsDetailView(DetailView):
+#     template_name = 'flights.html'
+    
+#     def get(self,request,id):
+#         flights_from = flightslistView.object_list.get(pk=id)
+#         flights_to = flightslistView.object_list.get(pk=id)
+#         return render(request,self.template_name,{'flight_from':flights_from,'flights_to': flights_to})
         
+        
+# def aboutus(request):
+#     aboutus = 'aboutus.html'
+#     return render(request,aboutus)
 
 # def add_post(request):
 #     	form = AddCart()

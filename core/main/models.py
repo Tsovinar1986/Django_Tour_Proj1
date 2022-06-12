@@ -1,35 +1,39 @@
 from tabnanny import verbose
-from tokenize import blank_re
+from distutils.command.upload import upload
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 
-class HomeSlide(models.Model):
-    name = models.CharField('slide  name', max_length=1000)
-    about = models.TextField('slide about', max_length = 2000)
-    image = models.ImageField('slide  image', upload_to = 'media')
-
+        # def get_absolute_url(self):
+        #     return reverse('home')
     
+class HomeSlide(models.Model):
+    slide = models.CharField('slide name', max_length=100)
+    about = models.CharField('slide about',max_length=1000)
+    img = models.ImageField('slide image', upload_to ='media')
     
     def __str__(self):
-        return self.name
-    
+            return self.name
+
     class Meta:
-        verbose_name = 'tour'
-        verbose_name_plural = 'tours'
+        verbose_name = 'Slide'
+        verbose_name_plural = 'Slides'
+        
+        
         
 class HomeProduct(models.Model):
-    name = models.CharField('Product name', max_length=500, blank = True)
-    decsribe = models.TextField('Product describtion', blank = True)
-    price = models.IntegerField('Product price', blank = True) 
-    img = models.ImageField('Product image', upload_to ='media', blank = True)   
+        name = models.CharField('Product name', max_length=500, blank = True)
+        decsribe = models.TextField('Product describtion', blank = True)
+        price = models.IntegerField('Product price', blank = True) 
+        img = models.ImageField('Product image', upload_to ='media', blank = True)   
     
-    def __str__(self):
-        return self.name
+        def __str__(self):
+           return self.name
     
-    class Meta:
-        verbose_name = 'HomeProduct'
-        verbose_name_plural = 'HomeProducts'
+        class Meta:
+              verbose_name = 'HomeProduct'
+              verbose_name_plural = 'HomeProducts'
         
 class stays(models.Model):
     name = models.CharField('Hotel name',max_length=50, blank = True)

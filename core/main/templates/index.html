@@ -83,8 +83,7 @@
 
     <h1 class="heading">Արկածային տուրիզմի գաղափարներ</h1>
         <div class="box-container">
-            {% for i in slider %}
-                {% if  i in slider %}
+            {% for i in slide %}
                 <div class="box">
                 <img src= "{{ i.img.url }}" alt="">
                 <h3>{{ i.name }} </h3>
@@ -103,7 +102,7 @@
 <section class="about" id="about">
 
     <div class="image">
-        <img src="images/compas.jpg" alt="">
+        <img src="{% url static 'images/compas.jpg' %}" alt="">
     </div>
 
     <div class="content">
@@ -130,8 +129,9 @@
         <div class="swiper-wrapper">
 
             <div class="swiper-slide slide">
+            {% for j in product %}
                 <div class="image">
-                    <img src="images/product-1.jpg" alt="">
+                    <img src="{{j.img.url}}" alt="">
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart"></a>
                         <a href="#" class="fas fa-eye"></a>
@@ -139,8 +139,8 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h3>ՈՒսապարկ</h3>
-                    <div class="price"> 60 000AMD </div>
+                    <h3>{{j.name}}</h3>
+                    <div class="{{j.price}}"> 60 000AMD </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -150,10 +150,11 @@
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
             <div class="swiper-slide slide">
+                {% for j in product %}
                 <div class="image">
-                    <img src="images/product-2.jpg" alt="">
+                    <img src="{{j.img.url}}" alt="">
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart"></a>
                         <a href="#" class="fas fa-eye"></a>
@@ -161,8 +162,8 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h3>Դանակ</h3>
-                    <div class="price"> 15 000 AMD </div>
+                    <h3>{{j.name}}</h3>
+                    <div class="{{j.price}}"> 15 000 AMD </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -172,10 +173,11 @@
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
             <div class="swiper-slide slide">
+            {% for j in product %}
                 <div class="image">
-                    <img src="images/product-3.jpg" alt="">
+                    <img src="{{j.img.url}}" alt="">
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart"></a>
                         <a href="#" class="fas fa-eye"></a>
@@ -183,8 +185,8 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h3>Ակնոց</h3>
-                    <div class="price"> 10 000 AMD </div>
+                    <h3>{{j.name}}</h3>
+                    <div class="{{j.price}}"> 10 000 AMD </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -194,10 +196,11 @@
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
             <div class="swiper-slide slide">
+            {% for j in product %}
                 <div class="image">
-                    <img src="images/product-4.jpg" alt="">
+                    <img src="{{j.img.url}}" alt="">
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart"></a>
                         <a href="#" class="fas fa-eye"></a>
@@ -205,8 +208,8 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h3> Ալպինիստական կոշիկ</h3>
-                    <div class="price"> 20 000 AMD </div>
+                    <h3> {{ j.name }}</h3>
+                    <div class="{{j.price}}"> 20 000 AMD </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -216,10 +219,11 @@
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
             <div class="swiper-slide slide">
+            {% for j in product %}
                 <div class="image">
-                    <img src="images/termo.jpg" alt="">
+                    <img src="{{ j.img.url }}" alt="">
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart"></a>
                         <a href="#" class="fas fa-eye"></a>
@@ -227,8 +231,8 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h3>ԹԵՐՄՈՀԱԳՈՒՍՏ CLOE</h3>
-                    <div class="price"> 35 000 AMD </div>
+                    <h3>{{j.name}}</h3>
+                    <div class="{{j.price}}"> 35 000 AMD </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -238,10 +242,11 @@
                     </div>
                 </div>
             </div>
-
+            {% endfor %}
             <div class="swiper-slide slide">
+            {% for j in product %}
                 <div class="image">
-                    <img src="images/vran.jpg" alt="">
+                    <img src="{{j.img.url}}" alt="">
                     <div class="icons">
                         <a href="#" class="fas fa-shopping-cart"></a>
                         <a href="#" class="fas fa-eye"></a>
@@ -249,8 +254,8 @@
                     </div>
                 </div>
                 <div class="content">
-                    <h3>ՎՐԱՆ FOX COMFORT 2 V2</h3>
-                    <div class="price"> 120 000 AMD </div>
+                    <h3>{{j.name}}</h3>
+                    <div class="{{j.price}}"> 120 000 AMD </div>
                     <div class="stars">
                         <i class="fas fa-star"></i>
                         <i class="fas fa-star"></i>
@@ -262,7 +267,7 @@
             </div>
 
         </div>
-
+        {% endfor %}
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
 
