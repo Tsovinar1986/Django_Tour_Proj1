@@ -42,3 +42,4 @@ Macos:
 venv: pip install pillow
 conda: conda install -c anaconda pillow or conda install pillow
 
+After installing the requirements for the environment we start our project.
