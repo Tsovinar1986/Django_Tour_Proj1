@@ -162,7 +162,7 @@ input[type=submit]:hover {
 
 {% load crispy_forms_tags %}
 
-{% load imagesh %}
+{% load static %}
 
     <div class="container py-5">
         <h1>Login</h1>
@@ -174,8 +174,6 @@ input[type=submit]:hover {
         <p class="text-center">Don't have an account? <a href="{% url 'register' %}">Create an account</a>.</p>
     </div>
 
-{% endblock %}
-
 <div class="bottom-container">
   <div class="row">
     <div class="col">
@@ -186,11 +184,11 @@ input[type=submit]:hover {
     </div>
   </div>
   <div class="image">
-    <img src="{% url 'imagesh/Login-cuate.png' %}" alt="" width="20%" >
+    <img src="{% static 'imagesh/Login-cuate.png' %}" alt="" width="20%" >
 </div>
 
 </div>
 
-
+{% endblock %}
 </body>
 </html>

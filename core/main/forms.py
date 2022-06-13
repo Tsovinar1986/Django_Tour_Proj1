@@ -1,4 +1,3 @@
-from dataclasses import field
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
@@ -22,5 +21,5 @@ class NewUserForm(UserCreationForm):
 
 class AddCart(ModelForm):
     class Meta:
-		   model = UserCarts
-		   fields ='__all__'
+	    model = UserCarts
+	    fields = '__all__'

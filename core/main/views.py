@@ -1,8 +1,7 @@
 from asyncio.log import logger
-from itertools import product
 from django.dispatch import receiver
 from django.shortcuts import render, redirect
-from .models import  HomeProduct, HomeSlide
+from .models import  HomeProduct, HomeSlide,aboutus,stays,flights
 from django.contrib import messages
 from django.contrib.auth import login, authenticate,logout
 from django.contrib.auth.forms import AuthenticationForm
@@ -64,17 +63,23 @@ class HomeDetailView(DetailView):
     template_name = 'blog.html'
     
     def get(self,request,id):
-        product = HomeProduct.objects.get(pk=id)
+        product = HomeProduct.objects.filter.get(pk=id)
         slide = HomeSlide.objects.get(pk=id)
         context = {
             'product' : product,
             'slide' : slide,
         }
-        return render(request,self.template_name,context)        
-        
+        return render(request,self.template_name,context)      
+            
 def aboutus(request):
     aboutus = 'aboutus.html'
     return render(request,aboutus)
+
+def stays(request):
+    return render(request,'stays.html')
+
+def flights(request):
+    return render(request,'flights.html')
 
 # def add_post(request):
 #     	form = AddCart()

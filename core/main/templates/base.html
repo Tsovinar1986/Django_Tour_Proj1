@@ -28,18 +28,18 @@
 
     <nav class="navbar">
         <div id="nav-close" class="fas fa-times"></div>
-        <a href="#index">Գլխավոր</a>
+        <a href="{% url 'index' %}">Գլխավոր</a>
         <a href="{% url 'aboutus' %}">Մեր մասին</a>
-        <a href="#stays">Հյուրանոցներ</a>
-        <a href="#flights">Թռիչքներ</a>
-        <a href="#blog">Բլոգ</a>
+        <a href="{% url 'stays' %}">Հյուրանոցներ</a>
+        <a href="{% url 'flights' %}">Թռիչքներ</a>
+        <a href="{% url 'blog' %}">Բլոգ</a>
     </nav>
 
     <div class="icons">
         <div id="menu-btn" class="fas fa-bars"></div>
         
         <a href="#" class="fas fa-shopping-cart"></a>
-        <a href="#login"> <i class="fas fa-user"></i>  </a>
+        <a href="#{% url 'LOGIN' % }"> <i class="fas fa-user"></i>  </a>
         <div id="search-btn" class="fas fa-search"></div>
     </div>
 
@@ -70,12 +70,12 @@
 
         <div class="box">
             <h3>quick links</h3>
-            <a href="#index">home</a>
-            <a href="#aboutus">about</a>
-            <a href="#shop">shop</a>
-            <a href="#packages">packages</a>
-            <a href="#reviews">reviews</a>
-            <a href="#blogs">blogs</a>
+            <a href="{% url 'index' %}">home</a>
+            <a href="{% url 'aboutus' %}">about</a>
+            <a href="{% url 'shop' %}">shop</a>
+            <a href="{% url 'packages' %}">packages</a>
+            <a href="{% url 'reviews' %}">reviews</a>
+            <a href="{% url 'blogs' %}">blogs</a>
         </div>
 
         <div class="box">
@@ -90,17 +90,17 @@
 
         <div class="box">
             <h3>contact info</h3>
-            <a href="#"> <i class="fas fa-phone"></i> +374-456-7890 </a>
-            <a href="#"> <i class="fas fa-phone"></i> +374-222-3333 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +374-10-26-11-71 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +374-55-26-11-70 </a>
             <a href="#"> <i class="fas fa-envelope"></i> travelbooking@gmail.com </a>
            
         </div>
 
         <div class="box">
             <h3>follow us</h3>
-            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+            <a href="https://www.facebook.com"> <i class="fab fa-facebook-f"></i> facebook </a>
+            <a href="https://www.twitter.com"> <i class="fab fa-twitter"></i> twitter </a>
+            <a href="https://www.instagram.com"> <i class="fab fa-instagram"></i> instagram </a>
             
         </div>
 
