@@ -2,50 +2,12 @@ from asyncio.log import logger
 from django.dispatch import receiver
 from django.shortcuts import render, redirect
 from .models import  HomeProduct, HomeSlide,aboutus,stays,flights
-from django.contrib import messages
-from django.contrib.auth import login, authenticate,logout
-from django.contrib.auth.forms import AuthenticationForm
 from decimal import Decimal
 from django.urls import reverse
 from django.http import HttpResponse
-from .forms import NewUserForm, AddCart
 from django.views.generic import ListView,DetailView,View,CreateView,FormView,TemplateView
 
 
-def register_request(request):
-    if request.method == 'POST':
-        form = NewUserForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            login(request,user)
-            messages.success(request, 'Registration is successfull')
-            return redirect('index')
-        messages.error(request,'Unsuccessfull registration. Invalid Information.')
-    form = NewUserForm()
-    return render(request=request, template_name="register.html", context={"register_form":form})
-
-def login_request(request):
-	if request.method == "POST":
-		form = AuthenticationForm(request, data=request.POST)
-		if form.is_valid():
-			username = form.cleaned_data.get('username')
-			password = form.cleaned_data.get('password')
-			user = authenticate(username=username, password=password)
-			if user is not None:
-				login(request, user)
-				messages.info(request, f"You are now logged in as {username}.")
-				return redirect("index")
-			else:
-				messages.error(request,"Invalid username or password.")
-		else:
-			messages.error(request,"Invalid username or password.")
-	form = AuthenticationForm()
-	return render(request=request, template_name="login.html", context={"login_form":form})
-
-def logout_request(request):
-	logout(request)
-	messages.info(request, "You have successfully logged out.") 
-	return redirect("home")
 
 class HomeView(ListView):
     template_name = 'index.html'
@@ -76,38 +38,28 @@ def aboutus(request):
     return render(request,aboutus)
 
 def stays(request):
-    return render(request,'stays.html')
+    neighborhood,city,min_price,max_price,property_status,property_type, BHK,  aminities, bedroom, bathroom = 'stays.html'
+    context = {
+        'neighborhood': neighborhood,
+        'city' : city,
+        'min_price' : min_price,
+        'max_price' : max_price,
+        'property_status' : property_status,
+        'property_type' : property_type,
+        'BHK' : BHK,
+        'aminities' : aminities,
+        'bedroom' : bedroom,
+        'bathroom' : bathroom
+    }
+    return render(request,'stays.html',context)
 
 def flights(request):
-    return render(request,'flights.html')
+    flights_from, flights_to = 'flights.html'
+    context = {
+        'flights_from' : flights_from,
+        'flights_to' :flights_to,
+    }
+    return render(request,'flights.html',context)
 
-# def add_post(request):
-#     	form = AddCart()
-# 	    if request.method == 'POST':
-# 			form = AddCart(request.POST)
-# 		    if form.is_valid():
-# 			   form.save()
-# 			   context = {'form':form}
-# 			   return redirect('post_detail')
-# 		    else:
-# 			    form = AddCart()
-# 			    context = {'form':form}
-# 	    else:
-# 		         form = AddCart()
-# 		context = {'form':form}
-# 	return render(request, 'add_post.html', context)
-	            
-# def post_detail(request):
-# 	carts = UserCarts.objects.all()
-# 	return render(request, 'post_detail.html', {'carts':carts})
-
-
-# class UserPageListView(ListView):
-#     template_name = 'userpage.html'
-
-#     def get(self, request):
-#         users = NewUserForm(request.POST)
-		
-#         return render(request, self.template_name, {'users':users, 'form':form})
 
 
